@@ -1,0 +1,16 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <form id="confirmDelete"  method="post" class="form" role="form" action='{% url "field_delete" object %}'>
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Eliminazione commento</h4>
+              </div>
+              <div class="modal-body">
+                    {% csrf_token %}
+                    <p>Are you sure you want to delete Field_id : [ {{object}} ] ?</p>
+              <div class="modal-footer">
+                <input type="button" class="btn btn-default" data-dismiss="modal" value="cancel" />
+                <input type="submit" class="btn btn-primary" value="submit" />
+              </div>
+        </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->

@@ -1,0 +1,16 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <form id="confirmNew"  method="post" class="form" role="form" action='{% url "field_new" %}'>
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Field</h4>
+              </div>
+              <div class="modal-body">
+			{% csrf_token %}
+   		 {{ form.as_p }}
+                <div class="modal-footer">
+                <input type="button" class="btn btn-default" data-dismiss="modal" value="cancel" />
+                <input type="submit" class="btn btn-primary" value="submit" />
+              </div>
+        </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->

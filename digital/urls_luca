@@ -1,0 +1,37 @@
+from django.conf.urls import url, include
+from digital.models import Field
+from rest_framework import routers, serializers, viewsets
+from digital import view
+
+# Serializers define the API representation.
+
+#class FieldSerializer(serializers.HyperlinkedModelSerializer):
+#    class Meta:
+#        model = Field
+#        fields = ('image_path', 'price', 'desc_text', 'stock_number', 'available_text')
+
+# ViewSets define the view behavior.
+
+#class FieldViewSet(viewsets.ModelViewSet):
+#    queryset = Field.objects.all()
+#    serializer_class = FieldSerializer
+
+# Routers provide an easy way of automatically determining the URL conf.
+
+#router = routers.DefaultRouter()
+#router.register(r'fields', FieldViewSet)
+
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
+
+#urlpatterns = [
+#    url(r'^', include(router.urls)),
+#    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+#]
+
+urlpatterns = [
+    url(r'^fields/$', 'field_collection'),
+    url(r'^fields/(?P<pk>[0-9]+)/$', 'field_element'),
+    url(r'^fields/(?P<pk>[0-9]+)/$', 'delete_post'),
+]
+

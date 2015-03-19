@@ -1,0 +1,18 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <form id="confirmEdit"  method="post" class="form" action="{% url "field_edit" object%}">
+	<div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Field id: [ {{object  }} ]</h4>
+              </div>
+              <div class="modal-body">
+			{% csrf_token %}
+		{{ form.as_p }}
+		
+		<div class="modal-footer">
+	<input type="button" class="btn btn-default" data-dismiss="modal" value="cancel" />
+		<input type="submit" class="btn btn-primary" value="submit"/>
+		</div>
+	</form>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
